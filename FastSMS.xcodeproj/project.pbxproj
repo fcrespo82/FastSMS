@@ -17,7 +17,9 @@
 		ED71EF1F166C224100448F63 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED71EF1E166C224100448F63 /* Default@2x.png */; };
 		ED71EF21166C224100448F63 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED71EF20166C224100448F63 /* Default-568h@2x.png */; };
 		ED71EF24166C224100448F63 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED71EF22166C224100448F63 /* MainStoryboard.storyboard */; };
-		ED71EF27166C224100448F63 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71EF26166C224100448F63 /* ViewController.m */; };
+		ED71EF2F166C229C00448F63 /* SMSListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71EF2E166C229C00448F63 /* SMSListViewController.m */; };
+		ED71EF33166C248D00448F63 /* SMSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71EF32166C248D00448F63 /* SMSCell.m */; };
+		ED71EF37166C286200448F63 /* guy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ED71EF36166C286200448F63 /* guy.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +37,11 @@
 		ED71EF1E166C224100448F63 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		ED71EF20166C224100448F63 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		ED71EF23166C224100448F63 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		ED71EF25166C224100448F63 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ED71EF26166C224100448F63 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ED71EF2D166C229C00448F63 /* SMSListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSListViewController.h; sourceTree = "<group>"; };
+		ED71EF2E166C229C00448F63 /* SMSListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSListViewController.m; sourceTree = "<group>"; };
+		ED71EF31166C248D00448F63 /* SMSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSCell.h; sourceTree = "<group>"; };
+		ED71EF32166C248D00448F63 /* SMSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSCell.m; sourceTree = "<group>"; };
+		ED71EF36166C286200448F63 /* guy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guy.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +90,9 @@
 			children = (
 				ED71EF19166C224100448F63 /* AppDelegate.h */,
 				ED71EF1A166C224100448F63 /* AppDelegate.m */,
-				ED71EF22166C224100448F63 /* MainStoryboard.storyboard */,
-				ED71EF25166C224100448F63 /* ViewController.h */,
-				ED71EF26166C224100448F63 /* ViewController.m */,
+				ED71EF34166C256400448F63 /* Assets */,
+				ED71EF40166C360E00448F63 /* Views */,
+				ED71EF30166C247000448F63 /* Controllers */,
 				ED71EF11166C224100448F63 /* Supporting Files */,
 			);
 			path = FastSMS;
@@ -105,6 +110,41 @@
 				ED71EF20166C224100448F63 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED71EF30166C247000448F63 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED71EF31166C248D00448F63 /* SMSCell.h */,
+				ED71EF32166C248D00448F63 /* SMSCell.m */,
+				ED71EF2D166C229C00448F63 /* SMSListViewController.h */,
+				ED71EF2E166C229C00448F63 /* SMSListViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		ED71EF34166C256400448F63 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				ED71EF35166C256D00448F63 /* Images */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		ED71EF35166C256D00448F63 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				ED71EF36166C286200448F63 /* guy.jpeg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		ED71EF40166C360E00448F63 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED71EF22166C224100448F63 /* MainStoryboard.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +203,7 @@
 				ED71EF1F166C224100448F63 /* Default@2x.png in Resources */,
 				ED71EF21166C224100448F63 /* Default-568h@2x.png in Resources */,
 				ED71EF24166C224100448F63 /* MainStoryboard.storyboard in Resources */,
+				ED71EF37166C286200448F63 /* guy.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +216,8 @@
 			files = (
 				ED71EF17166C224100448F63 /* main.m in Sources */,
 				ED71EF1B166C224100448F63 /* AppDelegate.m in Sources */,
-				ED71EF27166C224100448F63 /* ViewController.m in Sources */,
+				ED71EF2F166C229C00448F63 /* SMSListViewController.m in Sources */,
+				ED71EF33166C248D00448F63 /* SMSCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
