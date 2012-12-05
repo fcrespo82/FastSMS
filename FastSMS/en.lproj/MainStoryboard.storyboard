@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Lbr-xS-FcW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Lbr-xS-FcW">
     <dependencies>
+        <development version="4500" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
@@ -8,32 +9,31 @@
         <scene sceneID="L8g-1D-TWc">
             <objects>
                 <tableViewController id="cv8-Np-gaD" customClass="SMSListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="H3y-Co-2Ou">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="H3y-Co-2Ou">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SMSTemplate" rowHeight="64" id="5tj-d0-TWO" customClass="SMSCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SMSTemplate" rowHeight="64" id="5tj-d0-TWO" customClass="SMSCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9c0-Ir-GMd">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="63" id="CjM-in-ZMz"/>
-                                            </constraints>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="c4c-K5-Vi1">
+                                            <rect key="frame" x="0.0" y="0.0" width="63" height="63"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbZ-35-BtS">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NQE-lm-QwR">
+                                            <rect key="frame" x="71" y="0.0" width="229" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="229" translatesAutoresizingMaskIntoConstraints="NO" id="MzK-MK-YDa">
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="43" id="Sv2-DW-vW9"/>
-                                            </constraints>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YaQ-M4-ycR">
+                                            <rect key="frame" x="71" y="20" width="229" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,21 +42,10 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="MzK-MK-YDa" secondAttribute="trailing" constant="20" type="default" id="8o4-WC-m6C"/>
-                                    <constraint firstAttribute="trailing" secondItem="VbZ-35-BtS" secondAttribute="trailing" constant="20" type="default" id="CUi-9M-ErX"/>
-                                    <constraint firstItem="9c0-Ir-GMd" firstAttribute="top" secondItem="5tj-d0-TWO" secondAttribute="top" type="default" id="INx-mj-F5m"/>
-                                    <constraint firstItem="VbZ-35-BtS" firstAttribute="leading" secondItem="9c0-Ir-GMd" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Mke-A1-hn0"/>
-                                    <constraint firstItem="9c0-Ir-GMd" firstAttribute="bottom" secondItem="MzK-MK-YDa" secondAttribute="bottom" type="default" id="QyH-2a-aQF"/>
-                                    <constraint firstItem="MzK-MK-YDa" firstAttribute="leading" secondItem="9c0-Ir-GMd" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Zrx-po-sHi"/>
-                                    <constraint firstItem="VbZ-35-BtS" firstAttribute="top" secondItem="5tj-d0-TWO" secondAttribute="top" type="default" id="a91-Hj-0vC"/>
-                                    <constraint firstItem="9c0-Ir-GMd" firstAttribute="leading" secondItem="5tj-d0-TWO" secondAttribute="leading" type="default" id="k7a-cb-v1z"/>
-                                    <constraint firstItem="MzK-MK-YDa" firstAttribute="top" secondItem="5tj-d0-TWO" secondAttribute="top" constant="20" type="default" id="uGZ-My-UlL"/>
-                                </constraints>
                                 <connections>
-                                    <outlet property="SMSCellImage" destination="9c0-Ir-GMd" id="YM2-wL-Hx3"/>
-                                    <outlet property="SMSCellText" destination="MzK-MK-YDa" id="8wl-lE-ThS"/>
-                                    <outlet property="SMSCellTitle" destination="VbZ-35-BtS" id="2Qv-Ra-Z0J"/>
+                                    <outlet property="SMSCellImage" destination="c4c-K5-Vi1" id="Xaa-HZ-W2Q"/>
+                                    <outlet property="SMSCellText" destination="YaQ-M4-ycR" id="UMR-5S-NOp"/>
+                                    <outlet property="SMSCellTitle" destination="NQE-lm-QwR" id="V2B-LQ-kcv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -65,7 +54,15 @@
                             <outlet property="delegate" destination="cv8-Np-gaD" id="qu2-65-9FW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SMS Templates" id="NLr-d8-qjB"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="SMS Templates" id="NLr-d8-qjB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jef-aU-ff8">
+                            <color key="tintColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="addItem:" destination="cv8-Np-gaD" id="7aq-jd-V3B"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPX-aP-Zgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,6 +84,22 @@
             <point key="canvasLocation" x="-91" y="-25"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="SMSCell" superclassName="UITableViewPanableCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SMSCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="SMSCellImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="SMSCellText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="SMSCellTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SMSListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SMSListViewController.h"/>
+        </class>
+        <class className="UITableViewPanableCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITableViewPanableCell.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UITableViewPanableCell.h"
 
-@interface SMSCell : UITableViewCell
+@interface SMSCell : UITableViewPanableCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *SMSCellImage;
 @property (weak, nonatomic) IBOutlet UILabel *SMSCellTitle;

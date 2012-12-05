@@ -20,6 +20,7 @@
 		ED71EF2F166C229C00448F63 /* SMSListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71EF2E166C229C00448F63 /* SMSListViewController.m */; };
 		ED71EF33166C248D00448F63 /* SMSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71EF32166C248D00448F63 /* SMSCell.m */; };
 		ED71EF37166C286200448F63 /* guy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ED71EF36166C286200448F63 /* guy.jpeg */; };
+		EDDE6495166EA12B00E57E22 /* UITableViewPanableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDE6494166EA12B00E57E22 /* UITableViewPanableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		ED71EF31166C248D00448F63 /* SMSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSCell.h; sourceTree = "<group>"; };
 		ED71EF32166C248D00448F63 /* SMSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSCell.m; sourceTree = "<group>"; };
 		ED71EF36166C286200448F63 /* guy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guy.jpeg; sourceTree = "<group>"; };
+		EDDE6493166EA12B00E57E22 /* UITableViewPanableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewPanableCell.h; sourceTree = "<group>"; };
+		EDDE6494166EA12B00E57E22 /* UITableViewPanableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewPanableCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,7 @@
 		ED71EF10166C224100448F63 /* FastSMS */ = {
 			isa = PBXGroup;
 			children = (
+				EDDE6491166EA0D300E57E22 /* Classes */,
 				ED71EF19166C224100448F63 /* AppDelegate.h */,
 				ED71EF1A166C224100448F63 /* AppDelegate.m */,
 				ED71EF34166C256400448F63 /* Assets */,
@@ -145,6 +149,15 @@
 				ED71EF22166C224100448F63 /* MainStoryboard.storyboard */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		EDDE6491166EA0D300E57E22 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EDDE6493166EA12B00E57E22 /* UITableViewPanableCell.h */,
+				EDDE6494166EA12B00E57E22 /* UITableViewPanableCell.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +231,7 @@
 				ED71EF1B166C224100448F63 /* AppDelegate.m in Sources */,
 				ED71EF2F166C229C00448F63 /* SMSListViewController.m in Sources */,
 				ED71EF33166C248D00448F63 /* SMSCell.m in Sources */,
+				EDDE6495166EA12B00E57E22 /* UITableViewPanableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +348,7 @@
 				ED71EF2C166C224100448F63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

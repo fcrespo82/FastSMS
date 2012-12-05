@@ -14,6 +14,8 @@
 
 @implementation SMSListViewController
 
+NSMutableArray *arrayItems;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -23,20 +25,21 @@
     return self;
 }
 
-- (void)setNavigationBarWithColor:(UIColor *)color {
-    self.navigationController.navigationBar.tintColor = color;
-}
+//- (void)setNavigationBarWithColor:(UIColor *)color {
+//    self.navigationController.navigationBar.tintColor = color;
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [self setNavigationBarWithColor:[UIColor brownColor]];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
  
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Display an Edit button in the navigation bar.
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    // Initialize arrayItems
+    if (!arrayItems) {
+        arrayItems = [[NSMutableArray alloc] init];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,75 +52,129 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    //#warning Potentially incomplete method implementation.
     // Return the number of sections.
+    // Only one section since it's a simple SMS list
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 10;
+    return [arrayItems count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"SMSTemplate";
-    SMSCell *cell = (SMSCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    [self testCell:cell];
+    //SMSCell *swipeableCell = [[SMSCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+
+	SMSCell *cell = (SMSCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    if (!cell) {
+        cell = [[SMSCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+
+    NSDictionary *item = [arrayItems objectAtIndex:[indexPath item]];
+    
+    cell.SMSCellTitle.text = [item valueForKey:@"title"];
+    cell.SMSCellText.text = [item valueForKey:@"value"];
+    
+    UIImage *defaultImage = [UIImage imageNamed:@"guy.jpeg"];
+    cell.SMSCellImage.image = defaultImage;
+    
+    //[self testCell:cell withTitle:title];
+    
+    //scell.rearView = cell;
+    
+    //[swipeableCell addSubview:cell];
     
     return cell;
 }
 
-- (void)testCell:(SMSCell *)cell {
-    cell.SMSCellTitle.text = @"My Title";
+- (void)testCell:(SMSCell *)cell withTitle:(NSString *)title{
+    
+    cell.SMSCellTitle.text = title;
     cell.SMSCellText.text = @"Just a text to identify if the size and fontsize of this cell would br enought to acomodate large SMS texts.";
     UIImage *defaultImage = [UIImage imageNamed:@"guy.jpeg"];
     cell.SMSCellImage.image = defaultImage;
 }
 
-/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath {
+    return NO;
 }
-*/
 
-/*
+
+//// Override to support editing the table view.
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        // Delete the row from the data source
+//        NSMutableArray *tempArray = [arrayItems mutableCopy];
+//        [tempArray removeObjectAtIndex:[indexPath item]];
+//        arrayItems = [tempArray copy];
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+//    }   
+//    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"test" message:@"add" delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles: nil];
+//
+//        [alert show];
+//    }
+//}
+
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    NSLog(@"FROM Index: %d", [fromIndexPath item]);
+    NSLog(@"TO Index: %d", [toIndexPath item]);
+    if (([toIndexPath item] < [arrayItems count] ) && ([fromIndexPath item] < [arrayItems count] )) {
+    
+        NSMutableArray *tempArray = [arrayItems mutableCopy];
+        id from = [tempArray objectAtIndex: [fromIndexPath item]];
+        id to = [tempArray objectAtIndex: [toIndexPath item]];
+        [tempArray removeObjectAtIndex: [toIndexPath item]];
+        [tempArray insertObject:from atIndex: [toIndexPath item]];
+        [tempArray removeObjectAtIndex: [fromIndexPath item]];
+        [tempArray insertObject:to atIndex: [fromIndexPath item]];
+        arrayItems = [tempArray copy];
+        NSLog(@"array: %@", tempArray);
+    
+    }
 }
-*/
 
-/*
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return  UITableViewCellEditingStyleNone;
+}
+
+- (IBAction)addItem:(id)sender {
+    NSDictionary *randomDict =  @{@"title":[NSString stringWithFormat:@"%d", rand()], @"value": @"test"};
+    [arrayItems addObject:randomDict];
+    
+    NSIndexPath *insertIndexPath = [NSIndexPath indexPathForRow:[arrayItems count]-1 inSection:0];
+    
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:insertIndexPath] withRowAnimation:UITableViewRowAnimationMiddle];    
+}
+
 
 #pragma mark - Table view delegate
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
