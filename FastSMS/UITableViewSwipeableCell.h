@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITableViewPanableCell : UITableViewCell
+@interface UITableViewSwipeableCell : UITableViewCell
 
 @property (nonatomic, retain) UIView *rearView;
 

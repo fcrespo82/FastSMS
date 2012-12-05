@@ -6,16 +6,16 @@
 //  Copyright (c) 2012 Fernando Crespo. All rights reserved.
 //
 
-#import "UITableViewPanableCell.h"
+#import "UITableViewSwipeableCell.h"
 
-@interface UITableViewPanableCell()
+@interface UITableViewSwipeableCell()
 
 @property UISwipeGestureRecognizer *swipeRecognizer;
 @property BOOL panning;
 
 @end
 
-@implementation UITableViewPanableCell
+@implementation UITableViewSwipeableCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

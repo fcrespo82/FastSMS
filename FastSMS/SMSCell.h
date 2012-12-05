@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UITableViewPanableCell.h"
+#import "UITableViewSwipeableCell.h"
 
-@interface SMSCell : UITableViewPanableCell
+@interface SMSCell : UITableViewSwipeableCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *SMSCellImage;
 @property (weak, nonatomic) IBOutlet UILabel *SMSCellTitle;
