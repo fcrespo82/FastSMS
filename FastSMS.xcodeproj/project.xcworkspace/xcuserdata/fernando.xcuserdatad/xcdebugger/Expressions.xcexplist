@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[SMSListViewController tableView:moveRowAtIndexPath:toIndexPath:]:SMSListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[toIndexPath item]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SMSListViewController tableView:cellForRowAtIndexPath:]:SMSListViewController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

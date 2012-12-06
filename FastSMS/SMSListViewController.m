@@ -146,7 +146,7 @@ NSMutableArray *arrayItems;
     
     NSIndexPath *insertIndexPath = [NSIndexPath indexPathForRow:[arrayItems count]-1 inSection:0];
     
-    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:insertIndexPath] withRowAnimation:UITableViewRowAnimationMiddle];    
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:insertIndexPath] withRowAnimation:UITableViewRowAnimationTop];
 }
 
 
