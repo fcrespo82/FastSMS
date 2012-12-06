@@ -64,40 +64,26 @@ NSMutableArray *arrayItems;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"SMSTemplate";
+    static NSString *frontIdentifier = @"SMSTemplate";
+    static NSString *backIdentifier = @"SMSBack";
     
-    //SMSCell *swipeableCell = [[SMSCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-
-	SMSCell *cell = (SMSCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+	SMSCell *cell = (SMSCell *)[tableView dequeueReusableCellWithIdentifier:frontIdentifier forIndexPath:indexPath];
     
-    if (!cell) {
-        cell = [[SMSCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
+//    UITableViewCell *back = [tableView dequeueReusableCellWithIdentifier:backIdentifier forIndexPath:indexPath];
 
     NSDictionary *item = [arrayItems objectAtIndex:[indexPath item]];
-    
+
     cell.SMSCellTitle.text = [item valueForKey:@"title"];
     cell.SMSCellText.text = [item valueForKey:@"value"];
     
     UIImage *defaultImage = [UIImage imageNamed:@"guy.jpeg"];
     cell.SMSCellImage.image = defaultImage;
-    
-    //[self testCell:cell withTitle:title];
-    
-    //scell.rearView = cell;
-    
-    //[swipeableCell addSubview:cell];
-    
-    return cell;
-}
 
-- (void)testCell:(SMSCell *)cell withTitle:(NSString *)title{
+    NSLog(@"%@", cell.subviews);
     
-    cell.SMSCellTitle.text = title;
-    cell.SMSCellText.text = @"Just a text to identify if the size and fontsize of this cell would br enought to acomodate large SMS texts.";
-    UIImage *defaultImage = [UIImage imageNamed:@"guy.jpeg"];
-    cell.SMSCellImage.image = defaultImage;
+//    cell.backView = back;
+
+    return cell;
 }
 
 // Override to support conditional editing of the table view.
@@ -110,7 +96,6 @@ NSMutableArray *arrayItems;
 - (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
 }
-
 
 //// Override to support editing the table view.
 //- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -130,32 +115,24 @@ NSMutableArray *arrayItems;
 //    }
 //}
 
-
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-    NSLog(@"FROM Index: %d", [fromIndexPath item]);
-    NSLog(@"TO Index: %d", [toIndexPath item]);
-    if (([toIndexPath item] < [arrayItems count] ) && ([fromIndexPath item] < [arrayItems count] )) {
-    
-        NSMutableArray *tempArray = [arrayItems mutableCopy];
-        id from = [tempArray objectAtIndex: [fromIndexPath item]];
-        id to = [tempArray objectAtIndex: [toIndexPath item]];
-        [tempArray removeObjectAtIndex: [toIndexPath item]];
-        [tempArray insertObject:from atIndex: [toIndexPath item]];
-        [tempArray removeObjectAtIndex: [fromIndexPath item]];
-        [tempArray insertObject:to atIndex: [fromIndexPath item]];
-        arrayItems = [tempArray copy];
-        NSLog(@"array: %@", tempArray);
-    
-    }
+    NSMutableArray *tempArray = [arrayItems mutableCopy];
+    id from = [tempArray objectAtIndex: [fromIndexPath item]];
+    id to = [tempArray objectAtIndex: [toIndexPath item]];
+    [tempArray removeObjectAtIndex: [toIndexPath item]];
+    [tempArray insertObject:from atIndex: [toIndexPath item]];
+    [tempArray removeObjectAtIndex: [fromIndexPath item]];
+    [tempArray insertObject:to atIndex: [fromIndexPath item]];
+    arrayItems = [tempArray copy];
+    NSLog(@"array: %@", tempArray);
 }
 
 
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
 
@@ -164,7 +141,7 @@ NSMutableArray *arrayItems;
 }
 
 - (IBAction)addItem:(id)sender {
-    NSDictionary *randomDict =  @{@"title":[NSString stringWithFormat:@"%d", rand()], @"value": @"test"};
+    NSDictionary *randomDict =  @{@"title":[NSString stringWithFormat:@"%d", rand()], @"value": @"Just a text to identify if the size and fontsize of this cell would br enought to acomodate large SMS texts."};
     [arrayItems addObject:randomDict];
     
     NSIndexPath *insertIndexPath = [NSIndexPath indexPathForRow:[arrayItems count]-1 inSection:0];
@@ -174,7 +151,6 @@ NSMutableArray *arrayItems;
 
 
 #pragma mark - Table view delegate
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

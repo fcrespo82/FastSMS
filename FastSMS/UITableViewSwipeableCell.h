@@ -10,6 +10,6 @@
 
 @interface UITableViewSwipeableCell : UITableViewCell
 
-@property (nonatomic, retain) UIView *rearView;
+@property (retain) UIView *backView;
 
 @end

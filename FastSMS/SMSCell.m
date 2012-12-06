@@ -2,7 +2,7 @@
 //  SMSCell.m
 //  FastSMS
 //
-//  Created by Fernando Crespo on 02/12/12.
+//  Created by Fernando Crespo on 06/12/12.
 //  Copyright (c) 2012 Fernando Crespo. All rights reserved.
 //
 
@@ -10,20 +10,22 @@
 
 @implementation SMSCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    // Drawing code
 }
+*/
 
 @end
