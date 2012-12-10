@@ -107,7 +107,7 @@
         </scene>
     </scenes>
     <classes>
-        <class className="SMSCell" superclassName="UITableViewSwipeableCell">
+        <class className="SMSCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SMSCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="SMSCellImage" candidateClass="UIImageView"/>
@@ -120,9 +120,6 @@
             <relationships>
                 <relationship kind="action" name="addItem:"/>
             </relationships>
-        </class>
-        <class className="UITableViewSwipeableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITableViewSwipeableCell.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITableViewSwipeableCell : UITableViewCell
+@interface FCUITableViewSwipeableCell : UITableViewCell
 
 @property (retain) UIView *backView;
 

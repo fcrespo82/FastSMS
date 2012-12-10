@@ -20,7 +20,7 @@
 		ED71EF24166C224100448F63 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED71EF22166C224100448F63 /* MainStoryboard.storyboard */; };
 		ED71EF2F166C229C00448F63 /* SMSListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED71EF2E166C229C00448F63 /* SMSListViewController.m */; };
 		ED71EF37166C286200448F63 /* guy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ED71EF36166C286200448F63 /* guy.jpeg */; };
-		EDDE6495166EA12B00E57E22 /* UITableViewSwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDE6494166EA12B00E57E22 /* UITableViewSwipeableCell.m */; };
+		EDDE6495166EA12B00E57E22 /* FCUITableViewSwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDE6494166EA12B00E57E22 /* FCUITableViewSwipeableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +43,8 @@
 		ED71EF2D166C229C00448F63 /* SMSListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSListViewController.h; sourceTree = "<group>"; };
 		ED71EF2E166C229C00448F63 /* SMSListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSListViewController.m; sourceTree = "<group>"; };
 		ED71EF36166C286200448F63 /* guy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guy.jpeg; sourceTree = "<group>"; };
-		EDDE6493166EA12B00E57E22 /* UITableViewSwipeableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewSwipeableCell.h; sourceTree = "<group>"; };
-		EDDE6494166EA12B00E57E22 /* UITableViewSwipeableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewSwipeableCell.m; sourceTree = "<group>"; };
+		EDDE6493166EA12B00E57E22 /* FCUITableViewSwipeableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCUITableViewSwipeableCell.h; sourceTree = "<group>"; };
+		EDDE6494166EA12B00E57E22 /* FCUITableViewSwipeableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCUITableViewSwipeableCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,8 +154,8 @@
 		EDDE6491166EA0D300E57E22 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EDDE6493166EA12B00E57E22 /* UITableViewSwipeableCell.h */,
-				EDDE6494166EA12B00E57E22 /* UITableViewSwipeableCell.m */,
+				EDDE6493166EA12B00E57E22 /* FCUITableViewSwipeableCell.h */,
+				EDDE6494166EA12B00E57E22 /* FCUITableViewSwipeableCell.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -230,7 +230,7 @@
 				ED71EF17166C224100448F63 /* main.m in Sources */,
 				ED71EF1B166C224100448F63 /* AppDelegate.m in Sources */,
 				ED71EF2F166C229C00448F63 /* SMSListViewController.m in Sources */,
-				EDDE6495166EA12B00E57E22 /* UITableViewSwipeableCell.m in Sources */,
+				EDDE6495166EA12B00E57E22 /* FCUITableViewSwipeableCell.m in Sources */,
 				ED3CE0F41670D95000C2E940 /* SMSCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

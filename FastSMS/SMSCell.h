@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Fernando Crespo. All rights reserved.
 //
 
-#import "UITableViewSwipeableCell.h"
+//#import "FCUITableViewSwipeableCell.h"
 
-@interface SMSCell : UITableViewSwipeableCell
+@interface SMSCell: UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *SMSCellImage;
 @property (weak, nonatomic) IBOutlet UILabel *SMSCellTitle;

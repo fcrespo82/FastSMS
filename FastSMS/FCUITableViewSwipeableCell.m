@@ -6,13 +6,14 @@
 //  Copyright (c) 2012 Fernando Crespo. All rights reserved.
 //
 
-#import "UITableViewSwipeableCell.h"
+#import "FCUITableViewSwipeableCell.h"
 
-@interface UITableViewSwipeableCell()
+@interface FCUITableViewSwipeableCell()
+@property UITableViewCell *frontView;
 
 @end
 
-@implementation UITableViewSwipeableCell
+@implementation FCUITableViewSwipeableCell
 
 -(id)init {
     self = [super init];
@@ -25,13 +26,6 @@
     if (self) {
         [self addSwipeGestureRecognizerWithDirection:UISwipeGestureRecognizerDirectionLeft];
         [self addSwipeGestureRecognizerWithDirection:UISwipeGestureRecognizerDirectionRight];
-        
-        if (self.backgroundView == nil) {
-            /* Add a default empty background view to make it clear that it's all working */
-            UIView *defaultBackgroundView = [[UIView alloc] initWithFrame:self.contentView.frame];
-            defaultBackgroundView.backgroundColor = [UIColor darkGrayColor];
-            self.backgroundView = defaultBackgroundView;
-        }
     }
 }
 
@@ -55,29 +49,17 @@
 
 - (void)handleSwipe:(UISwipeGestureRecognizer *)recognizer {
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Swiped Left" message:@"test" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//        [alert show];
+        NSLog(@"Should hide contentView and show backView");
         
-        NSLog(@"Hide contentView");
-//        [self.contentView setAlpha:0.5];
-        [self.contentView setHidden:YES];
-        [self bringSubviewToFront:self.backgroundView];
-        [self.backgroundView setHidden:NO];
+//        [self.contentView removeFromSuperView];
+        
     }
     else if (recognizer.direction == UISwipeGestureRecognizerDirectionRight) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Swiped Right" message:@"test" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//        [alert show];
+        NSLog(@"Should show contentView and hide backView");
         
-        NSLog(@"Show contentView");
-//        [self.contentView setAlpha:1.0];
-        [self.contentView setHidden:NO];
-        [self sendSubviewToBack:self.backgroundView];
-        [self.backgroundView setHidden:YES];
+//        [self.backView removeFromSuperView];
     }
-    
-    NSLog(@"%f", self.contentView.alpha);
-    [self setNeedsDisplay];
-    
+    NSLog(@"%@",self.backView);
 }
 
 - (void)addSwipeGestureRecognizerWithDirection:(UISwipeGestureRecognizerDirection)direction {

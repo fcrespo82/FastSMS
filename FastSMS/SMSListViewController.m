@@ -25,14 +25,10 @@ NSMutableArray *arrayItems;
     return self;
 }
 
-//- (void)setNavigationBarWithColor:(UIColor *)color {
-//    self.navigationController.navigationBar.tintColor = color;
-//}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
+    
     // Display an Edit button in the navigation bar.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
@@ -68,21 +64,22 @@ NSMutableArray *arrayItems;
     static NSString *backIdentifier = @"SMSBack";
     
 	SMSCell *cell = (SMSCell *)[tableView dequeueReusableCellWithIdentifier:frontIdentifier forIndexPath:indexPath];
+
+    UITableViewCell *back = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:backIdentifier];
     
-//    UITableViewCell *back = [tableView dequeueReusableCellWithIdentifier:backIdentifier forIndexPath:indexPath];
-
     NSDictionary *item = [arrayItems objectAtIndex:[indexPath item]];
-
+    
     cell.SMSCellTitle.text = [item valueForKey:@"title"];
     cell.SMSCellText.text = [item valueForKey:@"value"];
-    
     UIImage *defaultImage = [UIImage imageNamed:@"guy.jpeg"];
     cell.SMSCellImage.image = defaultImage;
-
-    NSLog(@"%@", cell.subviews);
     
-//    cell.backView = back;
+    cell.backgroundView = back;
+    
+    NSLog(@"%@", cell.subviews);
 
+    //    cell.backView = back;
+    
     return cell;
 }
 
@@ -106,7 +103,7 @@ NSMutableArray *arrayItems;
 //        [tempArray removeObjectAtIndex:[indexPath item]];
 //        arrayItems = [tempArray copy];
 //        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
-//    }   
+//    }
 //    else if (editingStyle == UITableViewCellEditingStyleInsert) {
 //        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
 //        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"test" message:@"add" delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles: nil];
@@ -145,7 +142,7 @@ NSMutableArray *arrayItems;
     [arrayItems addObject:randomDict];
     
     NSIndexPath *insertIndexPath = [NSIndexPath indexPathForRow:[arrayItems count]-1 inSection:0];
-    
+
     [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:insertIndexPath] withRowAnimation:UITableViewRowAnimationTop];
 }
 
